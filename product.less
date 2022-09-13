@@ -1,0 +1,289 @@
+@primary: #3bafda;
+@secondary: #6c757d;
+@success: #1abc9c;
+@info: #37cde6;
+@warning: #f7b84b;
+@danger: #f1556c;
+@dark: #323a46;
+@purple: #6559cc;
+@pink: #f672a7;
+@light: #f1f5f7;
+
+.j-container {
+  width: 1150px;
+  margin: 0 auto;
+}
+.Xj-card-group {
+  display: flex;
+  flex-direction: row;
+  --margin-bottom: 1rem;
+
+  > .j-card {
+    flex-grow: 1;
+    width: 0;
+    margin-right: 10px;
+    align-items: center;
+    &:last-child {
+      margin-right: 0;
+    }
+    del {
+      font-size: 0.7rem;
+    }
+  }
+
+  &.card-hidden {
+    > .j-card {
+      .body {
+        width: 100%;
+        text-align: center;
+        h4,
+        hr,
+        span,
+        del {
+          color: white !important;
+        }
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:hover {
+        background: black;
+        img {
+          opacity: 0.3;
+        }
+        .body {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.card-border-none {
+    > .j-card {
+      border: none;
+    }
+  }
+
+  &.row {
+    &-3 {
+      > .j-card {
+        width: 30%;
+      }
+    }
+  }
+
+  &.card-m {
+    &-0 {
+      > .j-card {
+        margin: 0;
+      }
+    }
+    &-10 {
+      > .j-card {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &-30 {
+      > .j-card {
+        margin-right: 30px;
+        margin-bottom: 30px;
+        align-items: center;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    > .j-card {
+      padding: 10px;
+    }
+  }
+
+  &.card-up {
+    position: relative;
+    overflow: hidden;
+
+    .j-card {
+      transition: 0.3s ease-in-out;
+      .card-body {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+      }
+
+      &:hover {
+        transform: translate(0px, -30%);
+      }
+    }
+  }
+}
+
+.j-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e7eaed;
+  border-radius: 0.25rem;
+
+  &.sale-badge {
+    .card-body .Xj-badge {
+      display: inline;
+    }
+  }
+
+  &.badge-end {
+    .card-body del {
+      display: inline;
+    }
+  }
+
+  &.badge-end {
+    .card-body .Xj-badge {
+      float: right;
+    }
+  }
+  .card-img {
+    width: 100%;
+  }
+  .card-header {
+    padding: 1rem 1.5rem;
+    margin-bottom: 0;
+    background-color: #edeff1;
+    border-bottom: 1px solid #e7eaed;
+    flex: none;
+  }
+  .card-body {
+    position: relative;
+    padding: 1.5rem;
+    flex-grow: 1;
+
+    a.bottom-fix {
+      position: absolute;
+      bottom: 1.5rem;
+    }
+
+    .Xj-badge,
+    del {
+      display: none;
+    }
+  }
+  .card-footer {
+    flex: none;
+    padding: 1rem 1.5rem;
+    background-color: #edeff1;
+    border-top: 1px solid #e7eaed;
+  }
+
+  > .fa,
+  .card-icon {
+    display: block;
+    font-size: 36px;
+    padding: 1rem 0;
+    color: @primary;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .card-title {
+    color: @dark;
+  }
+
+  p,
+  .card-text {
+    color: @secondary;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  n {
+    font-size: 150%;
+    padding-right: 10px;
+    color: @primary;
+  }
+}
+
+.w {
+  &-1 {
+    width: 10%;
+  }
+  &-2 {
+    width: 20%;
+  }
+  &-3 {
+    width: 30%;
+  }
+  &-4 {
+    width: 40%;
+  }
+  &-5 {
+    width: 50%;
+  }
+  &-6 {
+    width: 60%;
+  }
+  &-7 {
+    width: 70%;
+  }
+  &-8 {
+    width: 80%;
+  }
+  &-9 {
+    width: 90%;
+  }
+  &-10 {
+    width: 100%;
+  }
+}
+
+.j-flex {
+  &-row {
+    display: flex;
+    flex-direction: row;
+    //align-items: center;
+    > * {
+      flex-grow: 1;
+    }
+    &.align-start {
+      align-items: start;
+    }
+  }
+  &-col {
+    display: flex !important;
+    flex-direction: column;
+    text-align: center !important;
+    > * {
+      margin: 0 auto;
+    }
+    > .fa {
+      padding: 1rem;
+      font-size: 24px;
+    }
+  }
+  &-odd {
+    > *:nth-of-type(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+}
